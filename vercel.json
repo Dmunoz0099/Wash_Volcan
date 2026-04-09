@@ -1,26 +1,12 @@
 {
-  "projects": [
-    {
-      "name": "volcan-carwash-backend",
+  "experimentalServices": {
+    "backend": {
       "rootDirectory": "backend",
-      "buildCommand": "npm install",
-      "outputDirectory": "."
+      "regions": ["iad1"]
     },
-    {
-      "name": "volcan-carwash-frontend",
+    "frontend": {
       "rootDirectory": "frontend",
-      "buildCommand": "npm run build",
-      "outputDirectory": "dist"
+      "regions": ["iad1"]
     }
-  ],
-  "env": [
-    {
-      "key": "SUPABASE_URL",
-      "value": "https://ybkenzbjzeeksiqmlxzf.supabase.co"
-    },
-    {
-      "key": "SUPABASE_KEY",
-      "value": "sb_publishable_nVJHMMxXS2YyzTE1C9_iTA_Kh4nDliM"
-    }
-  ]
+  }
 }
