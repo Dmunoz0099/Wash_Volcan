@@ -223,6 +223,7 @@ function Reviews() {
           border: 1px solid var(--gris);
           border-radius: 20px;
           padding: 50px;
+          overflow: hidden;
         }
 
         .reviews__gallery {
@@ -237,12 +238,14 @@ function Reviews() {
           border-radius: 16px;
           aspect-ratio: 1;
           background: rgba(0, 0, 0, 0.3);
+          max-width: 100%;
         }
 
         .reviews__image {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          display: block;
         }
 
         .reviews__nav-btn {
@@ -289,6 +292,8 @@ function Reviews() {
           gap: 10px;
           overflow-x: auto;
           padding: 4px;
+          -webkit-overflow-scrolling: touch;
+          max-width: 100%;
         }
 
         .reviews__thumbnail {

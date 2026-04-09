@@ -30,12 +30,15 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--negro);
   color: var(--blanco);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 a {

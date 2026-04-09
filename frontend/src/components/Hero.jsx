@@ -358,6 +358,7 @@ function Hero() {
           aspect-ratio: 1;
           max-width: 520px;
           margin: 0 auto;
+          overflow: hidden;
           animation: heroLogoIn 1s ease-out 0.3s both;
         }
         @keyframes heroLogoIn {
@@ -515,8 +516,9 @@ function Hero() {
           .hero__stats {
             justify-content: center;
           }
-          .hero__float-badge--1 { right: 0; }
-          .hero__float-badge--2 { left: 0; }
+          .hero__float-badge--1 { right: 2%; }
+          .hero__float-badge--2 { left: 2%; }
+          .hero__float-badge--3 { right: 2%; }
         }
 
         @media (max-width: 640px) {
