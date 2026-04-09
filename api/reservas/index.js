@@ -153,9 +153,11 @@ module.exports = async (req, res) => {
         adicionales: adicionales || '', fecha, hora, direccion, precio_total,
       };
 
-      // Enviar emails en background
-      enviarConfirmacionCliente(reservaCompleta);
-      enviarNotificacionPropietario(reservaCompleta);
+      // Enviar emails (await necesario en serverless)
+      await Promise.all([
+        enviarConfirmacionCliente(reservaCompleta),
+        enviarNotificacionPropietario(reservaCompleta),
+      ]);
 
       return res.status(201).json({
         id: reservaId,

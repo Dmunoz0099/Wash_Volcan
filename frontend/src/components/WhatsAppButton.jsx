@@ -1,6 +1,6 @@
 function WhatsAppButton() {
   // Reemplaza con tu número real de WhatsApp (formato internacional sin +)
-  const numero = '569956363267';
+  const numero = '56995563267';
   const mensaje = encodeURIComponent('Hola, me gustaría agendar un lavado con Volcán Wash Móvil');
   const url = `https://wa.me/${numero}?text=${mensaje}`;
 
