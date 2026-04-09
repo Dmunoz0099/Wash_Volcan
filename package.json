@@ -11,7 +11,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "jimp": "^1.6.1",
-    "sharp": "^0.34.5"
+    "@supabase/supabase-js": "^2.38.0",
+    "nodemailer": "^8.0.5"
   }
 }

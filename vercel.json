@@ -1,4 +1,11 @@
 {
-  "buildCommand": "npm run build",
-  "installCommand": "npm install"
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "npm install",
+  "rewrites": [
+    { "source": "/api/horarios-disponibles", "destination": "/api/horarios-disponibles" },
+    { "source": "/api/reservas", "destination": "/api/reservas" },
+    { "source": "/api/reservas/:id", "destination": "/api/reservas/[id]" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
