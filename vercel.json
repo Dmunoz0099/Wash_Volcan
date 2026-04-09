@@ -14,7 +14,9 @@
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/api/horarios-disponibles", "dest": "/api/horarios-disponibles.js" },
+    { "src": "/api/reservas/([^/]+)", "dest": "/api/reservas/[id].js?id=$1" },
+    { "src": "/api/reservas", "dest": "/api/reservas/index.js" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/frontend/$1" }
   ]
