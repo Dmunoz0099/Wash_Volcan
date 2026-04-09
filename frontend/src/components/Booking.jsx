@@ -16,6 +16,21 @@ const TIPOS_VEHICULO = [
   { value: 'suv', label: 'SUV / Camioneta' },
 ];
 
+// Horarios disponibles de 8am a 6pm (formato 24 horas)
+const HORARIOS_DISPONIBLES = [
+  '08:00', '09:00', '10:00', '11:00', '12:00',
+  '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'
+];
+
+// Convertir horarios 24h a formato 12h con am/pm
+const formatearHora = (hora24) => {
+  const [horas, minutos] = hora24.split(':');
+  const h = parseInt(horas);
+  const periodo = h >= 12 ? 'pm' : 'am';
+  const h12 = h > 12 ? h - 12 : h === 0 ? 12 : h;
+  return `${String(h12).padStart(2, '0')}:${minutos} ${periodo}`;
+};
+
 function Booking({ onReservaExitosa }) {
   const [form, setForm] = useState({
     nombre: '',
@@ -40,19 +55,27 @@ function Booking({ onReservaExitosa }) {
   const fechaMinima = hoy.toISOString().split('T')[0];
 
   useEffect(() => {
-    if (!form.fecha) return;
+    if (!form.fecha) {
+      setHorasDisponibles([]);
+      return;
+    }
     setCargandoHoras(true);
+
+    // Obtener horarios disponibles del backend (si existe)
+    // Si no, usar todos los horarios predefinidos
     fetch(`/api/horarios-disponibles?fecha=${form.fecha}`)
       .then(r => r.json())
       .then(data => {
-        setHorasDisponibles(data.disponibles || []);
+        const horasBackend = data.disponibles || HORARIOS_DISPONIBLES;
+        setHorasDisponibles(horasBackend);
         setCargandoHoras(false);
-        if (form.hora && !data.disponibles?.includes(form.hora)) {
+        if (form.hora && !horasBackend.includes(form.hora)) {
           setForm(f => ({ ...f, hora: '' }));
         }
       })
       .catch(() => {
-        setHorasDisponibles([]);
+        // Si la API falla, usar todos los horarios
+        setHorasDisponibles(HORARIOS_DISPONIBLES);
         setCargandoHoras(false);
       });
   }, [form.fecha]);
@@ -261,7 +284,7 @@ function Booking({ onReservaExitosa }) {
                       className={`hora-btn ${form.hora === h ? 'hora-btn--active' : ''}`}
                       onClick={() => { setForm(f => ({ ...f, hora: h })); setError(''); }}
                     >
-                      {h}
+                      {formatearHora(h)}
                     </button>
                   ))}
                 </div>
