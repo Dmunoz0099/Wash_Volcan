@@ -281,7 +281,35 @@ function Services() {
         @media (max-width: 768px) {
           .services { padding: 60px 0; }
           .services__title { font-size: 2rem; }
-          .services__grid { grid-template-columns: 1fr; }
+          .services__grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+          }
+          .service-card {
+            padding: 32px 20px;
+          }
+          .services__adicionales {
+            padding: 24px 16px;
+          }
+          .adicionales__grid {
+            grid-template-columns: 1fr;
+          }
+          .adicional-card {
+            padding: 14px 16px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .services__title { font-size: 1.7rem; }
+          .services__desc { font-size: 0.9rem; }
+          .service-card__nombre { font-size: 1.3rem; }
+          .service-card__precios { padding: 12px; }
+          .service-card__precio-row { font-size: 0.85rem; }
+          .service-card__precio { font-size: 0.95rem; }
+          .service-card__btn {
+            padding: 12px 32px;
+            font-size: 0.85rem;
+          }
         }
       `}</style>
     </section>

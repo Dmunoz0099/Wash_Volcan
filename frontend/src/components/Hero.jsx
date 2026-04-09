@@ -523,40 +523,74 @@ function Hero() {
           .hero {
             padding-top: 70px;
           }
+          .hero__inner {
+            padding-top: 10px;
+            padding-bottom: 60px;
+            gap: 30px;
+          }
           .hero__title {
-            font-size: 2.6rem;
+            font-size: 2.4rem;
           }
           .hero__title-accent {
-            font-size: 3.2rem;
+            font-size: 3rem;
           }
           .hero__title-thin {
             font-size: 1.5rem;
           }
+          .hero__tag {
+            font-size: 0.7rem;
+            padding: 6px 14px;
+            margin-bottom: 20px;
+          }
           .hero__subtitle {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            margin-bottom: 28px;
           }
           .hero__actions {
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
+            margin-bottom: 36px;
           }
           .hero__btn-primary,
           .hero__btn-ghost {
             width: 100%;
-            max-width: 280px;
             justify-content: center;
+            padding: 14px 24px;
           }
           .hero__stats {
-            gap: 20px;
+            gap: 16px;
+            justify-content: space-evenly;
+          }
+          .hero__stat {
+            align-items: center;
           }
           .hero__stat-num {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+          }
+          .hero__stat-label {
+            font-size: 0.65rem;
           }
           .hero__logo-wrapper {
-            max-width: 280px;
+            max-width: 240px;
           }
           .hero__float-badge {
             font-size: 0.7rem;
-            padding: 8px 12px;
+            padding: 7px 10px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .hero__title {
+            font-size: 2rem;
+          }
+          .hero__title-accent {
+            font-size: 2.5rem;
+          }
+          .hero__logo-wrapper {
+            max-width: 200px;
+          }
+          .hero__float-badge {
+            display: none;
           }
         }
       `}</style>

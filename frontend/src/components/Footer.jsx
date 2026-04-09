@@ -86,12 +86,18 @@ function Footer() {
         }
 
         @media (max-width: 768px) {
+          .footer {
+            padding: 40px 0 0;
+          }
           .footer__content {
             grid-template-columns: 1fr;
             text-align: center;
+            gap: 28px;
+            padding-bottom: 28px;
           }
           .footer__logo {
-            margin: 0 auto 16px;
+            margin: 0 auto 12px;
+            width: 100px;
           }
         }
       `}</style>

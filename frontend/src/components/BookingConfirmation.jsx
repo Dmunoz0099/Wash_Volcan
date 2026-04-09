@@ -161,7 +161,18 @@ function BookingConfirmation({ datos, onCerrar }) {
         }
 
         @media (max-width: 768px) {
-          .confirm-modal { padding: 28px 20px; }
+          .confirm-modal { padding: 28px 16px; }
+          .confirm__title { font-size: 1.5rem; }
+          .confirm__details { padding: 16px; }
+          .confirm__row { font-size: 0.82rem; padding: 8px 0; }
+          .confirm__value { max-width: 55%; }
+        }
+
+        @media (max-width: 380px) {
+          .confirm-overlay { padding: 12px; }
+          .confirm-modal { padding: 24px 12px; }
+          .confirm__icon { font-size: 2.5rem; }
+          .confirm__title { font-size: 1.3rem; }
         }
       `}</style>
     </div>

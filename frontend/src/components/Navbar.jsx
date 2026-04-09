@@ -153,16 +153,23 @@ function Navbar() {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 70%;
+            width: 75%;
+            max-width: 300px;
             height: 100vh;
             flex-direction: column;
             background: rgba(10, 10, 10, 0.98);
-            padding: 80px 40px;
+            padding: 80px 32px;
             gap: 24px;
             transition: right 0.3s ease;
           }
           .navbar__links--open {
             right: 0;
+          }
+          .navbar__logo img {
+            height: 45px;
+          }
+          .navbar--scrolled .navbar__logo img {
+            height: 38px;
           }
         }
       `}</style>

@@ -515,8 +515,48 @@ function Booking({ onReservaExitosa }) {
         @media (max-width: 768px) {
           .booking { padding: 60px 0; }
           .booking__title { font-size: 2rem; }
-          .booking__form { padding: 24px 20px; }
+          .booking__form { padding: 24px 16px; }
           .booking__grid { grid-template-columns: 1fr; }
+          .booking__horas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+          }
+          .hora-btn {
+            padding: 10px 8px;
+            font-size: 0.82rem;
+            text-align: center;
+          }
+          .booking__resumen {
+            padding: 16px;
+          }
+          .booking__submit {
+            padding: 16px;
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .booking__title { font-size: 1.7rem; }
+          .booking__form { padding: 20px 12px; }
+          .booking__horas {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .form-group input,
+          .form-group select {
+            padding: 12px 14px;
+            font-size: 0.9rem;
+          }
+          .adicional-check {
+            padding: 10px 12px;
+            gap: 8px;
+          }
+          .adicional-check span:first-of-type {
+            font-size: 0.82rem;
+          }
+          .adicional-check__precio {
+            font-size: 0.85rem;
+          }
         }
       `}</style>
     </section>

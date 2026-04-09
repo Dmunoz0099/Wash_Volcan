@@ -366,12 +366,13 @@ function Reviews() {
           }
 
           .reviews__content {
-            padding: 24px;
-            gap: 30px;
+            padding: 20px 16px;
+            gap: 24px;
           }
 
           .reviews__selector {
             gap: 8px;
+            margin-bottom: 30px;
           }
 
           .reviews__cliente-btn {
@@ -379,17 +380,55 @@ function Reviews() {
             font-size: 0.85rem;
           }
 
+          .reviews__nav-btn {
+            width: 36px;
+            height: 36px;
+            font-size: 1.4rem;
+          }
+
+          .reviews__nav-btn--prev {
+            left: 8px;
+          }
+
+          .reviews__nav-btn--next {
+            right: 8px;
+          }
+
+          .reviews__cliente-nombre {
+            font-size: 1.4rem;
+          }
+
           .reviews__texto {
-            font-size: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
           }
 
           .reviews__thumbnails {
-            gap: 8px;
+            gap: 6px;
+            justify-content: center;
           }
 
           .reviews__thumbnail {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
+          }
+
+          .reviews__text {
+            text-align: center;
+            gap: 14px;
+          }
+        }
+
+        @media (max-width: 380px) {
+          .reviews__title { font-size: 1.7rem; }
+          .reviews__content { padding: 16px 12px; }
+          .reviews__cliente-btn {
+            padding: 8px 14px;
+            font-size: 0.8rem;
+          }
+          .reviews__thumbnail {
+            width: 40px;
+            height: 40px;
           }
         }
       `}</style>
