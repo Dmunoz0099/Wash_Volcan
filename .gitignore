@@ -3,3 +3,23 @@ dist/
 *.db
 .env
 .env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Vercel
+.vercel
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Build
+build/
+.next/
