@@ -11,9 +11,6 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-// Servir archivos estáticos del frontend compilado
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
 // ── Horarios disponibles ──────────────────────────────────────────
 // De 8am a 6pm (18:00)
 const HORARIOS = [
@@ -151,6 +148,9 @@ app.patch('/api/reservas/:id', async (req, res) => {
     res.status(500).json({ error: 'Error al actualizar reserva' });
   }
 });
+
+// ── Servir archivos estáticos del frontend ──────────────────────
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // ── Servir SPA (Single Page App) - Debe ir DESPUÉS de todas las rutas API ──
 app.get('*', (req, res) => {
