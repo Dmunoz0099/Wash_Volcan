@@ -1,12 +1,4 @@
 {
-  "experimentalServices": {
-    "backend": {
-      "rootDirectory": "backend",
-      "regions": ["iad1"]
-    },
-    "frontend": {
-      "rootDirectory": "frontend",
-      "regions": ["iad1"]
-    }
-  }
+  "buildCommand": "npm run build",
+  "installCommand": "npm install"
 }

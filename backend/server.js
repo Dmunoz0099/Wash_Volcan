@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const db = require('./database');
 const { enviarConfirmacionCliente, enviarNotificacionPropietario } = require('./email');
 
@@ -9,6 +10,9 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
+
+// Servir archivos estáticos del frontend compilado
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // ── Horarios disponibles ──────────────────────────────────────────
 const HORARIOS = [
@@ -145,6 +149,11 @@ app.patch('/api/reservas/:id', async (req, res) => {
     console.error('Error:', err);
     res.status(500).json({ error: 'Error al actualizar reserva' });
   }
+});
+
+// ── Servir SPA (Single Page App) - Debe ir DESPUÉS de todas las rutas API ──
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
 // ── Inicio del servidor ───────────────────────────────────────────
