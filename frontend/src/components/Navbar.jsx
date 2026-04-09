@@ -13,6 +13,7 @@ function Navbar() {
   const navLinks = [
     { href: '#inicio', label: 'Inicio' },
     { href: '#servicios', label: 'Servicios' },
+    { href: '#resenas', label: 'Reseñas' },
     { href: '#reservar', label: 'Reservar' },
   ];
 
